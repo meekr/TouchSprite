@@ -92,6 +92,13 @@ package
 						break;
 					}
 				}
+				
+				if (!mMatched)
+				{
+					cornerC = pointTop;
+					cornerA = pointA;
+					cornerB = pointB;
+				}
 			}
 		}
 		
