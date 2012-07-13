@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Recs>
+	<!--
+		base: base line between 2 closest points
+		distance: between 3rd point and the middle point of base line
+		angle: from horizontal to base line
+		vector: with ortho position, from 3rd point to location (pivotX/Y)
+	 -->
+	<Rec base="180" distance="260" angle="0" pivot="112,120">0</Rec>
+	<Rec base="60" distance="280" angle="0" pivot="112,85">1</Rec>
+	<!--
+	<Rec base="80" vert="380">1</Rec>
+	<Rec base="80" vert="380">2</Rec>
+	<Rec base="80" vert="380">3</Rec>
+	<Rec base="80" vert="380">4</Rec>
+	<Rec base="80" vert="380">5</Rec>
+	<Rec base="80" vert="380">6</Rec>
+	<Rec base="80" vert="380">7</Rec>
+	<Rec base="80" vert="380">8</Rec>
+	<Rec base="80" vert="380">9</Rec>
+	-->
+</Recs>
