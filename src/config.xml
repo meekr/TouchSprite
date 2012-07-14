@@ -4,19 +4,16 @@
 		base: base line between 2 closest points
 		distance: between 3rd point and the middle point of base line
 		angle: from horizontal to base line
-		vector: with ortho position, from 3rd point to location (pivotX/Y)
+		pivot: location of pointA
 	 -->
-	<Rec base="180" distance="260" angle="0" pivot="112,120">0</Rec>
-	<Rec base="60" distance="280" angle="0" pivot="112,85">1</Rec>
-	<!--
-	<Rec base="80" vert="380">1</Rec>
-	<Rec base="80" vert="380">2</Rec>
-	<Rec base="80" vert="380">3</Rec>
-	<Rec base="80" vert="380">4</Rec>
-	<Rec base="80" vert="380">5</Rec>
-	<Rec base="80" vert="380">6</Rec>
-	<Rec base="80" vert="380">7</Rec>
-	<Rec base="80" vert="380">8</Rec>
-	<Rec base="80" vert="380">9</Rec>
-	-->
+	<Rec base="180" distance="260" angle="0" pivot="112,120">Pattern0</Rec>
+	<Rec base="60" distance="280" angle="0" pivot="112,85">Pattern1</Rec>
+	<Rec base="140" distance="200" angle="0" pivot="115,45">Pattern2</Rec>
+	<Rec base="150" distance="320" angle="0" pivot="115,45">Pattern3</Rec>
+	<Rec base="60" distance="170" angle="0" pivot="200,90">Pattern4</Rec>
+	<Rec base="170" distance="320" angle="0" pivot="130,40">Pattern5</Rec>
+	<Rec base="100" distance="330" angle="0" pivot="180,45">Pattern6</Rec>
+	<Rec base="180" distance="230" angle="0" pivot="110,40">Pattern7</Rec>
+	<Rec base="190" distance="275" angle="0" pivot="110,100">Pattern8</Rec>
+	<Rec base="115" distance="315" angle="0" pivot="135,50">Pattern9</Rec>
 </Recs>

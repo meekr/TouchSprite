@@ -30,7 +30,7 @@ package
 		private var mTouchIds:Array;
 		private var mRecPattern:RecPattern;
 		private var mTip:TextField;
-		private var mPatternGround:TextField;
+		private var mPatternImage:Image;
 		private var mRecConfig:XML;
 		
         public function Game()
@@ -48,10 +48,10 @@ package
 			mTip.hAlign = "center";
 			addChild(mTip);
 			
-			mPatternGround = new TextField(400, 400, "", "Verdana", 500, 0x000000);
-			mPatternGround.hAlign = "center";
-			mPatternGround.alpha = 0.6;
-			addChild(mPatternGround);
+			mPatternImage = new Image(Assets.getTexture("Pattern9"));
+			mPatternImage.alpha = 0.3;
+			mPatternImage.visible = false;
+			addChild(mPatternImage);
 			
 			Starling.current.stage.color = 0x00ff00;
 			
@@ -103,23 +103,29 @@ package
 				{
 					mRecPattern = new RecPattern(touches, mRecConfig);
 					mTip.text = "Base distance:"+mRecPattern.baselineDistance+", 3rd point to base distance:"+mRecPattern.distanceFrom3rdPointToBaselineCenter;
-					mPatternGround.text = mRecPattern.matchedPattern;
 				}
 				
 				if (mRecPattern.matched)
 				{
+					mPatternImage.texture = Assets.getTexture(mRecPattern.matchedPattern);
+					mPatternImage.visible = true;
+					
 					for each (touch in touches)
 					{
 						if (touch.id == mRecPattern.touchId4CornerA)
 						{
 							mRecPattern.cornerA = touch.getLocation(Starling.current.stage);
-							break;
+						}
+						else if (touch.id == mRecPattern.touchId4CornerB)
+						{
+							mRecPattern.cornerB = touch.getLocation(Starling.current.stage);
 						}
 					}
-					mPatternGround.x = mRecPattern.cornerA.x;
-					mPatternGround.y = mRecPattern.cornerA.y;
-					mPatternGround.pivotX = mRecPattern.pivot.x;
-					mPatternGround.pivotY = mRecPattern.pivot.y;
+					mPatternImage.x = mRecPattern.cornerA.x;
+					mPatternImage.y = mRecPattern.cornerA.y;
+					mPatternImage.pivotX = mRecPattern.pivot.x;
+					mPatternImage.pivotY = mRecPattern.pivot.y;
+					mPatternImage.rotation = mRecPattern.angle;
 				}
 			}
 			
@@ -143,7 +149,7 @@ package
 					}
 					
 					mTip.text = "在屏幕上放置数字积木吧^_^";
-					mPatternGround.text = "";
+					mPatternImage.visible = false;
 				}
 			}
 		}

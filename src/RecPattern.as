@@ -15,6 +15,7 @@ package
 		private var mMatchedPattern:String = "";
 		private var mPatternRule:XML;
 		private var mTouchId4CornerA:int;
+		private var mTouchId4CornerB:int;
 		
 		public function RecPattern(touches:Vector.<Touch>, patternRules:XML)
 		{
@@ -85,7 +86,10 @@ package
 							if (cornerA.equals(touch.getLocation(Starling.current.stage)))
 							{
 								mTouchId4CornerA = touch.id;
-								break;
+							}
+							else if (cornerB.equals(touch.getLocation(Starling.current.stage)))
+							{
+								mTouchId4CornerB = touch.id;
 							}
 						}
 						
@@ -126,6 +130,11 @@ package
 		public function get touchId4CornerA():int
 		{
 			return mTouchId4CornerA;
+		}
+		
+		public function get touchId4CornerB():int
+		{
+			return mTouchId4CornerB;
 		}
 		
 		public function get matched():Boolean
